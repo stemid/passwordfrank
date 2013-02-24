@@ -11,13 +11,13 @@ web.config.debug = True
 TEMPLATE_DIR = root('templates')
 STATIC_DIR = root('static')
 I18N_DIR = root('i18n')
-LOCALE = 'sv_SE'
+LOCALE = 'en_US'
 
 DB_ENGINE = 'postgres'
-DB_HOST = 'goto'
+DB_HOST = 'localhost'
 DB_NAME = 'passwordfrank'
-DB_USER = 'nocturnal'
-DB_PASS = 'wad93Pmne7toMiV6O6h8yw'
+DB_USER = 'user'
+DB_PASS = 'password'
 
 # Some UI stuff
 APP_NAME = 'Password Pusher'
