@@ -53,7 +53,8 @@ It's also advisable to use the tools/deletephrases.py in a crontab to delete old
 
 In /etc/cron.d/passwordfrank for example, add this. 
 
-    0	*	*	*	*	www-user /var/www/frank/tools/deletephrases.py
+    PATH=$PATH:/var/www/frank/tools
+    0 0 * * * www-data  deletephrases.py
 
 And use whatever user can access the file and the database. 
 
