@@ -1,0 +1,68 @@
+# Messages for password frank
+# Stefan Midjich, 2013.
+#
+msgid "Random password"
+msgstr "Slumpa lösenord"
+
+msgid "Push password"
+msgstr "Pusha lösenord"
+
+msgid "Random password settings"
+msgstr "Alternativ för slumpgenerator"
+
+msgid "Settings"
+msgstr "Inställningar"
+
+msgid "Password pusher tagline"
+msgstr "Skicka inte lösenord via e-post, skicka istället länkar till Password Pusher som upphör efter ett antal visningar/dagar."
+
+msgid "Password pusher use policy"
+msgstr "Alla lösenord raderas otvetydigt från databasen när deras gränsvärde för visningar eller dagar uppnås."
+
+msgid "Close"
+msgstr "Stäng"
+
+msgid "Save changes"
+msgstr "Spara ändringar"
+
+msgid "bits"
+msgstr "bitar"
+
+msgid "words"
+msgstr "ord"
+
+msgid "days"
+msgstr "dagar"
+
+msgid "views"
+msgstr "visningar"
+
+msgid "Enter password"
+msgstr "Skriv in lösenord"
+
+msgid "Copy password link"
+msgstr "Klicka på länken och använd Ctrl+c (⌘+c på Macintosh) för att kopiera"
+
+msgid "Use this link"
+msgstr "Använd den här länken istället för att skicka lösenord i klartext"
+
+msgid "Your password"
+msgstr "Ert lösenord"
+
+msgid "Deleted after"
+msgstr "Det här lösenordet raderas efter"
+
+msgid "or"
+msgstr "eller"
+
+msgid "today"
+msgstr "idag"
+
+msgid "Not found"
+msgstr "Hittades ej"
+
+msgid "Password not found"
+msgstr "Lösenordet hittades ej, det har antingen gått ut eller aldrig existerat."
+
+msgid "Return to front page"
+msgstr "Återvänd till Password Pusher"

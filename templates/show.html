@@ -1,0 +1,15 @@
+$def with (password,viewsleft,daysleft)
+<div class="hero-unit pagination-centered">
+	<h6>$_('Your password'):</h6>
+	<div class="page-header">
+		<h2>$:password</h2>
+	</div>
+	<p class="muted">
+	$_('Deleted after') $:viewsleft $_('views'), $_('or') 
+	$if daysleft > 0:
+		$:daysleft $_('days').
+	$else:
+		$_('today')!
+	</p>
+	<p class="muted"><a href="/" title="Return">$_('Return to front page')</a></p>
+</div>

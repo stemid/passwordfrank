@@ -1,0 +1,68 @@
+# Messages for password frank
+# Stefan Midjich, 2013.
+#
+msgid "Random password"
+msgstr "Random password"
+
+msgid "Push password"
+msgstr "Push password"
+
+msgid "Random password settings"
+msgstr "Random password settings"
+
+msgid "Settings"
+msgstr "Settings"
+
+msgid "Password pusher tagline"
+msgstr "Don't send passwords over e-mail, instead send links to Password Pusher that expire after a given number of views/days."
+
+msgid "Password pusher use policy"
+msgstr "All passwords are unequivocally deleted from database once their maximum number of days or views is reached."
+
+msgid "Close"
+msgstr "Close"
+
+msgid "Save changes"
+msgstr "Save changes"
+
+msgid "bits"
+msgstr "Bits"
+
+msgid "words"
+msgstr "words"
+
+msgid "days"
+msgstr "days"
+
+msgid "views"
+msgstr "views"
+
+msgid "Enter password"
+msgstr "Enter password"
+
+msgid "Copy password link"
+msgstr "Click on the text and use Ctrl+c (⌘+c on Macintosh) to copy"
+
+msgid "Use this link"
+msgstr "Use this link instead of sending a password in clear-text"
+
+msgid "Your password"
+msgstr "Your password"
+
+msgid "Deleted after"
+msgstr "This password will be deleted after"
+
+msgid "or"
+msgstr "or"
+
+msgid "today"
+msgstr "today"
+
+msgid "Not found"
+msgstr "Not found"
+
+msgid "Password not found"
+msgstr "The password was not found, it has either expired or it never existed. Go figure..."
+
+msgid "Return to front page"
+msgstr "Return to Password Pusher"
