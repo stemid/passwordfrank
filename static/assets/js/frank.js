@@ -103,8 +103,6 @@ $(document).ready(function() {
 
 		// Toggle post modal
 		$('#postPasswordModal').modal('toggle');
-		console.log('POST '+url+' HTTP/1.0');
-		console.log(sendData);
 
 		// Submit the POST query to API
 		jqreq = $.ajax({
@@ -114,7 +112,6 @@ $(document).ready(function() {
 			data: sendData,
 			dataType: 'json',
 			success: function (data, textStatus, jqHXR) {
-				console.log('success: '+textStatus);
 				$('#postPasswordSuccess').html(oldSuccessHtml);
 				$('#passwordLink').val(location.href+data.id);
 				$('#passwordLink').focus(function() {
