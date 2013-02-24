@@ -44,7 +44,7 @@ class index:
         daysleft = row.get('maxdays')-delta.days
 
         # Calculate if maxviews or maxdays has been reached
-        if delta.seconds <= 0 or viewsleft <= 0:
+        if daysleft <= 0 or viewsleft <= 0:
             try:
                 deleted = model.delete_phrase(seqID)
             except:
