@@ -16,9 +16,21 @@ CC0 - Creative Commons
 Using
 ====
 
-Read through settings.py first, the beginning of that file is all about settings for directory names, database and locale. 
+ 1. Read and configure settings.py first, it's all about settings for directory names, database and locale. 
+ 2. Install web.py and psycopg2 as python libraries. 
+ 3. Install PostgreSQL database schema from tools directory. 
+ 4. Import wordlist into database.
+ 5. Deploy
 
-Install PostgreSQL database schema from tools directory. 
+To install the PostgreSQL schema you can simply paste it into psql. 
+
+Importing of wordlist is done through REPL pretty easy, standing in the project root dir. 
+
+    >>> from model import db
+    >>> f = open('tools/wordlist.txt')
+    >>> for line in f:
+    ...  (freq, word) = line.split()
+    ...  db.insert('wordlist', frequency=freq, word=word)
 
 Either deploy using WSGI:
 
@@ -35,7 +47,7 @@ Either deploy using WSGI:
 
 Or just run from command line using:
 
-  python frank.py
+    python frank.py
 
 Translation
 ====
@@ -49,3 +61,8 @@ This tool is usually installed on Linux already, only Mac OS users might have tr
  3. ./Python-2.7.1/Tools/i18n/msgfmt.py -o i18n/en\_US/LC\_MESSAGES/messages.mo i18n/sv\_SE/LC\_MESSAGES/messages.po
 
 That's an example for english as main language, for any other language just edit the language specific i18n/sv\_SE/LC\_MESSAGES/messages.po and repeat step 3 for the language in question. 
+
+Credit
+====
+
+Wordlist comes courtesy of somewhere on the internet, I don't know its origin. 
