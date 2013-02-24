@@ -49,6 +49,14 @@ Or just run from command line using:
 
     python frank.py
 
+It's also advisable to use the tools/deletephrases.py in a crontab to delete old phrases that have reached their maxdays value regularly instead of waiting for page loads. 
+
+In /etc/cron.d/passwordfrank for example, add this. 
+
+    0	*	*	*	*	www-user /var/www/frank/tools/deletephrases.py
+
+And use whatever user can access the file and the database. 
+
 Translation
 ====
 
