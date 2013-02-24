@@ -30,12 +30,14 @@ class index:
             web.notfound()
             return tpl.notfound()
 
+        # Update phrase counter
         try:
             model.update_phrase(seqID)
         except(), e:
             web.internalerror()
             raise
 
+        # Get and calculate row data
         password = row.get('phrase')
         viewsleft = row.get('maxviews')-row.get('views')
         delta = datetime.now()-row.get('created')
