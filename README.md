@@ -1,16 +1,20 @@
-=== Password Frank 
+Password Frank 
+====
 
 It's a password Pusher in python, web.py, bootstrap and jquery. 
 
-=== Author
+Author
+====
 
 Stefan Midjich
 
-=== License
+License
+====
 
 CC0 - Creative Commons
 
-=== Using
+Using
+====
 
 Read through settings.py first, the beginning of that file is all about settings for directory names, database and locale. 
 
@@ -33,7 +37,8 @@ Or just run from command line using:
 
   python frank.py
 
-=== Translation
+Translation
+====
 
 Only supports en\_US and sv\_SE out-of-box. To add more languages you need a Python 2.7 distribution with the msgfmt.py tool. 
 
