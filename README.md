@@ -22,16 +22,16 @@ Install PostgreSQL database schema from tools directory.
 
 Either deploy using WSGI:
 
-  WSGIPythonPath /var/www/frank
-  WSGIScriptAlias / /var/www/frank/frank.py/
-  AddType text/html .py
-  Alias /static /var/www/frank/static
- 
-  <Directory /var/www/frank>
-   AllowOverride None
-   Order deny,allow
-   allow from all
-  </Directory>
+    WSGIPythonPath /var/www/frank
+    WSGIScriptAlias / /var/www/frank/frank.py/
+    AddType text/html .py
+    Alias /static /var/www/frank/static
+   
+    <Directory /var/www/frank>
+     AllowOverride None
+     Order deny,allow
+     allow from all
+    </Directory>
 
 Or just run from command line using:
 
