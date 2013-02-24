@@ -39,7 +39,7 @@ class index:
         password = row.get('phrase')
         viewsleft = row.get('maxviews')-row.get('views')
         delta = datetime.now()-row.get('created')
-        daysleft = delta.days
+        daysleft = row.get('maxdays')-delta.days
 
         # Calculate if maxviews or maxdays has been reached
         if delta.seconds <= 0 or viewsleft <= 0:
