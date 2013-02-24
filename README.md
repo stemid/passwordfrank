@@ -66,3 +66,8 @@ Credit
 ====
 
 Wordlist comes courtesy of somewhere on the internet, I don't know its origin. 
+
+Hint
+====
+
+Add settings.py to .gitignore for easier pulls during deployment. 
