@@ -2,7 +2,8 @@ $(document).ready(function () {
     'use strict';
 
     // Setup jquery sliders for random password settings form
-    var bitsValue = 12, wordsValue = 5, daysValue = 10, viewsValue = 10;
+    var bitsValue = 12, wordsValue = 5, daysValue = 10, viewsValue = 10,
+    url = '', oldSuccessHtml = '';
     $('#bitsSliderValue').html(bitsValue);
     $('#bitsSlider').slider({
         max: 16,
@@ -88,7 +89,7 @@ $(document).ready(function () {
             'maxviews': viewsValue,
             'password': password
         };
-        var url = $form.attr('action');
+        url = $form.attr('action');
 
         // Disable all input controls
         $inputs.prop('disabled', true);
