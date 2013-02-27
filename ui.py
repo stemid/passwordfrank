@@ -7,8 +7,10 @@ import web
 import settings, model
 from settings import base36decode
 
-def internalerror(errstr):
+def internalerror(errstr=None):
     web.header('Content-type', 'application/json')
+    if not errstr:
+        errstr = 'Undefined'
 
     return web.internalerror(json.dumps(dict(error=errstr)))
 

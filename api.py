@@ -83,8 +83,8 @@ class password:
         if today >= deleteDate or results['views'] >= results['maxviews']:
             try:
                 deleted = model.delete_phrase(seqID)
-            except:
-                web.internalerror()
+            except(), e:
+                web.internalerror(str(e))
                 raise
 
         # Return results to client
@@ -115,10 +115,10 @@ class password:
                 maxviews = int(query.maxviews)
             )
         except(model.ModelError), e:
-            web.internalerror()
+            web.internalerror(str(e))
             return json.dumps(dict(error=str(e)))
         except(), e:
-            web.internalerror()
+            web.internalerror(str(e))
             return json.dumps(dict(error=str(e)))
 
         web.created()
@@ -146,7 +146,7 @@ class password:
         try:
             model.delete_phrase(seqID)
         except(), e:
-            web.internalerror()
+            web.internalerror(str(e))
             return json.dumps(dict(error=str(e)))
 
         web.ok()
