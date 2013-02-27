@@ -21,11 +21,14 @@ class index:
         if not arg:
             return tpl.index()
 
-        seqID = base36decode(arg)
+        phraseCode = base36decode(arg)
 
         # If an argument is provided then someone is trying to view a password
         try:
-            row = model.get_phrase(seqID)
+            phrase = model.get_phrase(
+                code = phraseCode
+            )
+            seqID = phrase.get('id')
         except(model.ModelError), e:
             web.notfound()
             return tpl.notfound()
@@ -38,10 +41,10 @@ class index:
             raise
 
         # Get and calculate row data
-        password = row.get('phrase')
-        viewsleft = row.get('maxviews')-row.get('views')
-        delta = datetime.now()-row.get('created')
-        daysleft = row.get('maxdays')-delta.days
+        password = phrase.get('phrase')
+        viewsleft = phrase.get('maxviews')-phrase.get('views')
+        delta = datetime.now()-phrase.get('created')
+        daysleft = phrase.get('maxdays')-delta.days
 
         # Calculate if maxviews or maxdays has been reached
         if daysleft <= 0 or viewsleft <= 0:

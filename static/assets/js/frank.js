@@ -113,7 +113,7 @@ $(document).ready(function () {
             dataType: 'json',
             success: function (data, textStatus, jqHXR) {
                 $('#postPasswordSuccess').html(oldSuccessHtml);
-                $('#passwordLink').val(location.href + data.id);
+                $('#passwordLink').val(location.href + data.code);
                 $('#passwordLink').focus(function () {
                     $(this).select();
                 });

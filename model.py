@@ -28,38 +28,51 @@ def get_words(results=1024):
         raise IndexError('No results')
     return q
 
-def add_phrase(phrase=None, maxdays=10, maxviews=10):
+def add_phrase(phrase=None, code=None, maxdays=10, maxviews=10):
     if not phrase:
         raise ModelError('Requires phrase argument')
+
+    if not code:
+        raise ModelError('Requires code argument')
 
     try:
         seq = db.insert(
             'stash',
             maxdays = maxdays,
             maxviews = maxviews,
-            phrase = phrase
+            phrase = phrase,
+            code = code
         )
     except:
         raise
     return seq
 
-def get_phrase(seq=None, maxdays=None, maxviews=None):
-    if not seq:
-        raise ModelError('Requires sequence ID argument')
+def get_phrase(seq=None, code=None, maxdays=None, maxviews=None):
+    if seq:
+        where = 'id = $seq'
+    elif code:
+        where = 'code = $code'
+    else:
+        raise ModelError('Requires ID or code argument')
 
     try:
         row = db.select(
             'stash',
             vars = {
                 'seq':  seq,
+                'code': code,
             },
-            where = 'id = $seq'
+            where = where,
+            limit = 1,
+            order = 'id asc'
         )
     except:
         raise
 
     if not len(row):
         raise ModelError('No rows found')
+
+    # Only return first row
     return row[0]
 
 def update_phrase(seq=None):

@@ -1,4 +1,5 @@
 from datetime import datetime, timedelta
+from uuid import uuid4
 import json
 import web
 
@@ -48,12 +49,13 @@ class password:
             return json.dumps(dict(phrase=generatedPass))
 
         # Request for a pre-existing phrase
-        seqID = base36decode(arg)
+        phraseCode = base36decode(arg)
 
         try:
-            phrase = model.get_phrase(seqID)
+            phrase = model.get_phrase(base36decode(phraseCode))
+            seqID = phrase.get('id')
         except(model.ModelError), e:
-            web.notfound(str(e))
+            web.notfound()
             return json.dumps(dict(error='not found'))
         except(), e:
             web.internalerror(str(e))
@@ -69,6 +71,7 @@ class password:
         # Get results from row
         results = {}
         results['phrase'] = phrase.get('phrase', None)
+        results['code'] = phrase.get('code')
         results['created'] = phrase.get('created', None)
         results['maxdays'] = phrase.get('maxdays', 10)
         results['maxviews'] = phrase.get('maxviews', 10)
@@ -100,11 +103,16 @@ class password:
         # Change output to JSON
         web.header('Content-type', 'application/json')
 
+        # Generate unique code for phrase
+        uuid = uuid4()
+        phraseCode = str(uuid).split('-')[0]
+
         try:
             phraseid = model.add_phrase(
-                query.password,
-                int(query.maxdays),
-                int(query.maxviews)
+                phrase = query.password,
+                code = base36decode(phraseCode),
+                maxdays = int(query.maxdays),
+                maxviews = int(query.maxviews)
             )
         except(model.ModelError), e:
             web.internalerror()
@@ -116,20 +124,27 @@ class password:
         web.created()
         return json.dumps(dict(
             phrase = query.password,
-            id = base36encode(phraseid)
+            code = phraseCode
         ))
 
     # DELETE /password/foo HTTP/1.0
     def DELETE(self, arg):
-        if not arg:
-            web.internalerror()
-            return json.dumps(dict(error='must have id'))
-
         # Change output to JSON
         web.header('Content-type', 'application/json')
 
+        if not arg:
+            web.internalerror()
+            return json.dumps(dict(error='must have code'))
+
         try:
-            model.delete_phrase(base36decode(arg))
+            phrase = model.get_phrase(code=base36decode(arg))
+            seqID = phrase.get('id')
+        except(), e:
+            web.notfound()
+            return json.dumps(dict(error='not found'))
+
+        try:
+            model.delete_phrase(seqID)
         except(), e:
             web.internalerror()
             return json.dumps(dict(error=str(e)))
