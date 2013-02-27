@@ -3,7 +3,7 @@ $(document).ready(function () {
 
     // Setup jquery sliders for random password settings form
     var bitsValue = 12, wordsValue = 5, daysValue = 10, viewsValue = 10,
-    url = '', oldSuccessHtml = '';
+    url = '', oldSuccessHtml = '', sendData = '';
     $('#bitsSliderValue').html(bitsValue);
     $('#bitsSlider').slider({
         max: 16,
