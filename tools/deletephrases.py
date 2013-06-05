@@ -29,14 +29,12 @@ for row in rows:
 
     delta = now-created
 
-    if maxdays > delta.days:
-        continue
-    else:
+    if maxdays < delta.days:
         try:
             model.delete_phrase(seqID)
         except:
             raise
-        else:
+        finally:
             print >> stderr, "Deleted phrase ID: %d" % seqID
 
 exit(0)
