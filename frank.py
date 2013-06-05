@@ -15,9 +15,9 @@ gettext.translation(
 
 urls = (
     '/password', 'api.password',
-    '/password/(.+)', 'api.password',
+    '/password/([0-9a-z]+)', 'api.password',
     '/', 'ui.index',
-    '/(.+)', 'ui.index',
+    '/([0-9a-z]+)', 'ui.index',
 )
 
 app = web.application(urls, globals())
