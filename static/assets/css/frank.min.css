@@ -1657,9 +1657,9 @@ ul.icons{list-style-type:none;text-indent:-0.75em;}ul.icons li [class^="icon-"],
 .icon-github-alt:before{content:"\f113";}
 .icon-folder-close-alt:before{content:"\f114";}
 .icon-folder-open-alt:before{content:"\f115";}
-body{padding-top:60px;background-image:url('/static/assets/img/bg.jpg');background-repeat:repeat repeat;}
+body{margin-top:60px;background-image:url('/static/assets/img/bg.jpg');background-repeat:repeat repeat;}
 .hero-unit{-webkit-border-radius:10px;-moz-border-radius:10px;border-radius:10px;}
-input[type="text"]{font-size:18px;height:20px;}
+@media (max-width:767px){body{margin-top:30px;} .hero-unit{-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;padding:5px;margin-left:5px;margin-right:5px;}}@media (max-width:480px){body{margin-top:15px;} .hero-unit{-webkit-border-radius:2px;-moz-border-radius:2px;border-radius:2px;padding:2px;margin-left:0;margin-right:0;}}input[type="text"]{font-size:18px;height:20px;}
 .ui-slider{margin-bottom:20px;position:relative;}
 .ui-slider-handle{border-radius:50%;cursor:pointer;height:18px;margin-left:-9px;position:absolute;top:-3px;width:18px;z-index:2;}
 .ui-slider-range{border-radius:30px 0 0 30px;display:block;height:100%;position:absolute;z-index:1;}

@@ -4,13 +4,39 @@
 @import "elements.less";
 
 body {
-  padding-top:60px;
+  margin-top:60px;
   background-image:url('/static/assets/img/bg.jpg');
   background-repeat:repeat repeat;
 }
 
 .hero-unit {
   .rounded(10px);
+}
+
+// Tablets
+@media (max-width: 767px) {
+  body {
+    margin-top:30px;
+  }
+  .hero-unit {
+    .rounded(5px);
+    padding:5px;
+    margin-left:5px;
+    margin-right:5px;
+  }
+}
+
+// Phones
+@media (max-width: 480px) {
+  body {
+    margin-top:15px;
+  }
+  .hero-unit {
+    .rounded(2px);
+    padding:2px;
+    margin-left:0;
+    margin-right:0;
+  }
 }
 
 input[type="text"] {
