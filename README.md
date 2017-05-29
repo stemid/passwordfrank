@@ -3,6 +3,8 @@ Password Frank
 
 It's a password Pusher in python, web.py, bootstrap and jquery. 
 
+>**Note**: This project has been superseded by [my new password pusher](https://gitlab.com/stemid/pwfrank).
+
 Author
 ====
 
